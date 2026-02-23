@@ -6,7 +6,6 @@
   width: min(var(--container-max-width), 100%);
   margin: 0 auto;
   padding: var(--container-padding);
-  padding-top: 64px;
 }
 
 .destination-header {
@@ -98,7 +97,6 @@
 @media (max-width: 1023px) {
   .grid-container {
     padding: var(--container-padding-tablet);
-    padding-top: 52px;
   }
 
   .hotel-grid {
@@ -109,7 +107,6 @@
 @media (max-width: 767px) {
   .grid-container {
     padding: var(--container-padding-mobile);
-    padding-top: 44px;
   }
 
   .destination-header p {
