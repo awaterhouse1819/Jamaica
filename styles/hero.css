@@ -112,7 +112,7 @@ body.state-grid .grid-screen {
     top: var(--hero-title-top-mobile);
     max-width: calc(100vw - 24px);
     font-size: var(--hero-title-size-mobile);
-    white-space: normal;
+    white-space: nowrap;
   }
 
   .hero-dialog {
