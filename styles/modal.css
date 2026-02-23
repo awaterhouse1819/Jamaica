@@ -78,6 +78,18 @@
   white-space: nowrap;
 }
 
+.modal-title-link {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.modal-title-link:hover,
+.modal-title-link:focus-visible,
+.modal-title-link:active,
+.modal-title-link:visited {
+  color: var(--color-text);
+}
+
 .modal-close {
   border: none;
   background: transparent;
@@ -299,26 +311,26 @@
   display: inline-block;
   font-family: var(--font-pixel);
   font-size: 8px;
-  color: var(--color-text);
+  color: var(--color-accent);
   margin: 0;
   text-transform: uppercase;
   white-space: nowrap;
 }
 
 .stat-price .stat-label {
-  color: #f4dd68;
+  color: var(--color-accent);
 }
 
 .stat-seclusion .stat-label {
-  color: #79e9cd;
+  color: var(--color-accent);
 }
 
 .stat-activity .stat-label {
-  color: #ef6f86;
+  color: var(--color-accent);
 }
 
 .stat-romance .stat-label {
-  color: #b979e8;
+  color: var(--color-accent);
 }
 
 .stat-bar {
@@ -336,7 +348,7 @@
 }
 
 .stat-grid .stat.stat-price .stat-block.filled {
-  background: var(--color-accent) !important;
+  background: #f4dd68 !important;
 }
 
 .stat-grid .stat.stat-seclusion .stat-block.filled {
@@ -345,11 +357,11 @@
 
 .stat-grid .stat.stat-activity .stat-block.filled,
 .stat-grid .stat.stat-activity .stat-block.filled.activity {
-  background: var(--color-accent) !important;
+  background: #ef6f86 !important;
 }
 
 .stat-grid .stat.stat-romance .stat-block.filled {
-  background: var(--color-accent) !important;
+  background: #b979e8 !important;
 }
 
 .stat-block.empty {

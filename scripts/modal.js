@@ -234,7 +234,13 @@ export function createModalController(modalRoot) {
 
     const title = document.createElement("h3");
     title.className = "modal-title";
-    title.textContent = hotel.name;
+    const titleLink = document.createElement("a");
+    titleLink.className = "modal-title-link";
+    titleLink.href = hotel.website;
+    titleLink.target = "_blank";
+    titleLink.rel = "noreferrer noopener";
+    titleLink.textContent = hotel.name;
+    title.appendChild(titleLink);
 
     const closeButton = document.createElement("button");
     closeButton.type = "button";
@@ -266,15 +272,14 @@ export function createModalController(modalRoot) {
     mapLink.append(mapPin, mapText);
 
     const instagramLink = typeof hotel.instagram === "string" ? hotel.instagram.trim() : "";
-    const preferredLink = instagramLink || hotel.website;
-    const preferredLinkLabel = instagramLink ? "INSTAGRAM" : "WEBSITE";
+    const preferredInstagramLink = instagramLink || hotel.website;
 
     const siteLink = document.createElement("a");
     siteLink.className = "modal-link website";
-    siteLink.href = preferredLink;
+    siteLink.href = preferredInstagramLink;
     siteLink.target = "_blank";
     siteLink.rel = "noreferrer noopener";
-    siteLink.textContent = preferredLinkLabel;
+    siteLink.textContent = "INSTAGRAM";
 
     linkRow.append(mapLink, siteLink);
 
