@@ -265,12 +265,16 @@ export function createModalController(modalRoot) {
 
     mapLink.append(mapPin, mapText);
 
+    const instagramLink = typeof hotel.instagram === "string" ? hotel.instagram.trim() : "";
+    const preferredLink = instagramLink || hotel.website;
+    const preferredLinkLabel = instagramLink ? "INSTAGRAM" : "WEBSITE";
+
     const siteLink = document.createElement("a");
     siteLink.className = "modal-link website";
-    siteLink.href = hotel.website;
+    siteLink.href = preferredLink;
     siteLink.target = "_blank";
     siteLink.rel = "noreferrer noopener";
-    siteLink.textContent = "WEBSITE";
+    siteLink.textContent = preferredLinkLabel;
 
     linkRow.append(mapLink, siteLink);
 
