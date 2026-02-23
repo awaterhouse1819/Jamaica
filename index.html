@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pixel Isles - Escape to Jamaica</title>
+    <meta
+      name="description"
+      content="A pixel-inspired luxury Jamaica hotel discovery experience."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/hero.css" />
+    <link rel="stylesheet" href="styles/grid.css" />
+    <link rel="stylesheet" href="styles/modal.css" />
+  </head>
+  <body class="state-hero">
+    <div id="app">
+      <section id="hero-screen" class="screen hero-screen is-active" aria-label="Escape splash screen">
+        <img class="hero-background" src="assets/hero-bg.jpg" alt="" />
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <h1 class="hero-title">ESCAPE TO JAMAICA</h1>
+
+        <div class="hero-dialog" role="dialog" aria-label="Choose an action">
+          <button id="explore-button" class="hero-option hero-option-primary" type="button">
+            &gt;&gt; EXPLORE <span class="blink-cursor" aria-hidden="true">|</span>
+          </button>
+          <button id="later-button" class="hero-option hero-option-secondary" type="button">LATER</button>
+        </div>
+      </section>
+
+      <section id="grid-screen" class="screen grid-screen" aria-live="polite">
+        <main class="grid-container">
+          <header class="destination-header">
+            <h2>JAMAICA</h2>
+            <p>
+              The birthplace of reggae and home to stunning beaches, lush mountains, and laid-back
+              luxury.
+            </p>
+          </header>
+
+          <div id="hotel-grid" class="hotel-grid" aria-label="Jamaica luxury hotel selection"></div>
+        </main>
+      </section>
+    </div>
+
+    <div id="modal-root" aria-live="assertive"></div>
+
+    <noscript>
+      <p class="noscript-warning">This experience requires JavaScript to render hotel cards and the modal.</p>
+    </noscript>
+
+    <script type="module" src="scripts/app.js"></script>
+  </body>
+</html>

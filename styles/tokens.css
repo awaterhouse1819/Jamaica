@@ -1,0 +1,56 @@
+:root {
+  --color-shell: #2c2b38;
+  --color-card-dark: #1e1010;
+  --color-card-mid: #2a1a0e;
+  --color-screen: #0d1b2a;
+  --color-grid-bg: #1a0a08;
+  --color-text: #f5f0e8;
+  --color-muted: #aaaaaa;
+  --color-accent: #7fffd4;
+  --color-accent-alt: #ffe566;
+  --color-activity: #4a90e2;
+  --color-border: #3a2a1e;
+  --color-empty-block: #4a4a4a;
+
+  --font-pixel: "Press Start 2P", monospace;
+  --font-mono: "DM Mono", monospace;
+
+  --transition-screen: 400ms ease-in-out;
+  --transition-card: 200ms ease;
+  --transition-modal-in: 200ms ease-out;
+  --transition-modal-out: 150ms ease-in;
+  --transition-photo: 300ms ease-in-out;
+}
+
+body {
+  font-family: var(--font-mono);
+  background: var(--color-screen);
+  color: var(--color-text);
+  line-height: 1.45;
+}
+
+body.state-hero {
+  overflow: hidden;
+}
+
+body.state-grid {
+  overflow: auto;
+}
+
+.screen {
+  width: 100%;
+}
+
+.noscript-warning {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  background: #210f0f;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-size: 0.875rem;
+  z-index: 200;
+}
