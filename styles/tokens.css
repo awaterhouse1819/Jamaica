@@ -1,25 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:wght@400;700&display=swap');
+
 :root {
   --color-shell: #2c2b38;
-  --color-card-dark: #1e1010;
-  --color-card-mid: #2a1a0e;
-  --color-screen: #0d1b2a;
-  --color-grid-bg: #1a0a08;
+  --color-card-dark: #0d1730;
+  --color-card-mid: #132342;
+  --color-screen: #081426;
+  --color-grid-bg: #0b142c;
+  --color-grid-screen: #0a1328;
   --color-text: #f5f0e8;
   --color-muted: #aaaaaa;
-  --color-accent: #7fffd4;
+  --color-accent: #79e9cd;
   --color-accent-alt: #ffe566;
   --color-activity: #4a90e2;
-  --color-border: #3a2a1e;
-  --color-empty-block: #4a4a4a;
+  --color-border: #263e64;
+  --color-ui-divider: rgba(245, 240, 232, 0.15);
+  --color-dim-panel: #0d1a35;
+  --color-photo-fallback: #0d1a36;
+  --color-card-shadow: #2f3e5d;
+  --color-link-text: #dfd2c4;
+  --color-location: #79e9cd;
+  --color-location-alt: #79e9cd;
+  --color-modal: #131735;
+  --color-modal-border: #2b3961;
+  --color-titlebar: #232942;
+  --color-card-frame: #2f4772;
+  --color-card-body: #142340;
+  --color-card-body-border: #2f4772;
+  --color-card-hover: #5f7fad;
+  --color-card-bg: #0f1d38;
+  --color-stat-empty: #2f3e5d;
+  --color-stat-filled: #79e9cd;
+  --color-stat-activity: #4a90e2;
+  --color-photo-count-bg: rgba(30, 42, 80, 0.92);
+  --color-modal-stat-bg: #081938;
+  --color-modal-stat-border: #516aa1;
+  --color-hero-overlay-start: rgba(42, 18, 17, 0.22);
+  --color-hero-overlay-mid: rgba(42, 18, 17, 0.34);
+  --color-hero-overlay-end: rgba(42, 18, 17, 0.48);
+  --color-text-shadow: rgba(44, 22, 19, 0.72);
+  --color-black-shadow: rgba(22, 16, 16, 0.8);
+  --color-warning-bg: #210f0f;
 
   --font-pixel: "Press Start 2P", monospace;
-  --font-mono: "DM Mono", monospace;
+  --font-mono: "Space Mono", monospace;
+
+  --radius-modal: 10px;
+  --radius-photo: 4px;
+  --container-max-width: 1280px;
+  --container-padding: 26px 20px 34px;
+  --container-padding-tablet: 22px 16px 28px;
+  --container-padding-mobile: 18px 12px 22px;
 
   --transition-screen: 400ms ease-in-out;
   --transition-card: 200ms ease;
   --transition-modal-in: 200ms ease-out;
   --transition-modal-out: 150ms ease-in;
   --transition-photo: 300ms ease-in-out;
+  --transition-fast: 140ms ease;
+  --cursor-game: url("data:image/svg+xml,%3Csvg width='32' height='32' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='16' cy='16' r='6' stroke='%2379E9CD' stroke-width='2' fill='none'/%3E%3C/svg%3E") 16 16, auto;
+  --cursor-game-solid: url("data:image/svg+xml,%3Csvg width='32' height='32' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='16' cy='16' r='8' stroke='%2379E9CD' stroke-width='2' fill='none'/%3E%3C/svg%3E") 16 16, pointer;
+
+  --z-hero: 20;
+  --z-modal: 100;
+
+  --hero-title-size: clamp(14px, 6vw, 24px);
+  --hero-title-top: 46%;
+  --hero-title-top-mobile: 45%;
+  --hero-title-size-mobile: clamp(14px, 6vw, 24px);
+  --hero-dialog-top: 52.5%;
+  --hero-dialog-top-mobile: 51.5%;
+  --hero-option-size: clamp(9px, 0.95vw, 16px);
+  --hero-option-size-mobile: clamp(8px, 2.6vw, 12px);
 }
 
 body {
@@ -27,6 +78,12 @@ body {
   background: var(--color-screen);
   color: var(--color-text);
   line-height: 1.45;
+  text-rendering: geometricPrecision;
+  cursor: var(--cursor-game);
+}
+
+* {
+  cursor: inherit;
 }
 
 body.state-hero {
@@ -41,6 +98,16 @@ body.state-grid {
   width: 100%;
 }
 
+:is(button, a, [role="button"], .hotel-card) {
+  cursor: var(--cursor-game-solid);
+}
+
+:is(button, a, [role="button"], .hotel-card, .hero-option, .hero-option-primary, .modal-close, .modal-link):hover,
+:is(button, a, [role="button"], .hotel-card, .hero-option, .hero-option-primary, .modal-close, .modal-link):focus-visible,
+:is(button, a, [role="button"], .hotel-card, .hero-option, .hero-option-primary, .modal-close, .modal-link):active {
+  cursor: var(--cursor-game-solid);
+}
+
 .noscript-warning {
   position: fixed;
   left: 1rem;
@@ -48,9 +115,20 @@ body.state-grid {
   bottom: 1rem;
   margin: 0;
   padding: 0.75rem 1rem;
-  background: #210f0f;
+  background: var(--color-warning-bg);
   border: 1px solid var(--color-border);
   color: var(--color-text);
   font-size: 0.875rem;
   z-index: 200;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

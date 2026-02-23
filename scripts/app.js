@@ -6,8 +6,6 @@ import { createModalController } from "./modal.js";
 const heroScreen = document.getElementById("hero-screen");
 const heroBackground = heroScreen?.querySelector(".hero-background");
 const exploreButton = document.getElementById("explore-button");
-const laterButton = document.getElementById("later-button");
-const heroDialog = heroScreen?.querySelector(".hero-dialog");
 
 const gridScreen = document.getElementById("grid-screen");
 const destinationHeading = gridScreen?.querySelector(".destination-header h2");
@@ -37,8 +35,6 @@ renderHotelGrid({
 initHeroTransition({
   heroScreen,
   exploreButton,
-  laterButton,
-  heroDialog,
   onExplore: () => {
     if (!destinationHeading) {
       return;

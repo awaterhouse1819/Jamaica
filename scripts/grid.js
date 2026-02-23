@@ -23,11 +23,7 @@ function createHotelCard(hotel, onCardSelect) {
   title.className = "hotel-name";
   title.textContent = hotel.name;
 
-  const location = document.createElement("p");
-  location.className = "hotel-location";
-  location.textContent = `◉ ${hotel.location}`;
-
-  body.append(title, location);
+  body.append(title);
   card.append(image, body);
 
   card.addEventListener("click", () => {
