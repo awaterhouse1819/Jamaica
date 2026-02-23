@@ -85,7 +85,10 @@
 
 .modal-title-link:hover,
 .modal-title-link:focus-visible,
-.modal-title-link:active,
+.modal-title-link:active {
+  color: var(--color-accent);
+}
+
 .modal-title-link:visited {
   color: var(--color-text);
 }
