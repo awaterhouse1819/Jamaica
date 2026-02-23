@@ -1,4 +1,4 @@
-# Pixel Isles - Escape to Jamaica
+# Escape to Jamaica
 
 Static front-end experience built from the PRD using plain HTML, CSS, and vanilla JS.
 
