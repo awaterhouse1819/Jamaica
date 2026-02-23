@@ -68,7 +68,7 @@
   --hero-title-top-mobile: 45%;
   --hero-title-size-mobile: clamp(10px, 4.5vw, 18px);
   --hero-dialog-top: 52.5%;
-  --hero-dialog-top-mobile: 56%;
+  --hero-dialog-top-mobile: 55%;
   --hero-option-size: clamp(9px, 0.95vw, 16px);
   --hero-option-size-mobile: clamp(8px, 2.6vw, 12px);
 }
